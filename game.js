@@ -93,21 +93,21 @@ function gameOver()
     bodyElement.addClass("game-over");
     var audio = new Audio("sounds/wrong.mp3");
     audio.play();
+    var last_level = level;
+    
     setTimeout(function() {
         bodyElement.removeClass("game-over");
+        setTimeout(function() {
+            alert("Level reached: " + last_level);
+        }, 1000);
     }, 200);
 
-    var last_level = level;
     level = 0;
     playerClicks = 0;
     gamePattern = [];
     userClickedPattern = [];
     keyPressed = false;
     $("h1").text("Game Over, Press Any Key to Restart");
-
-    setTimeout(function() {
-        alert("Level reached: " + last_level);
-    }, 1000);
 
 }
 
