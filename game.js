@@ -97,14 +97,18 @@ function gameOver()
         bodyElement.removeClass("game-over");
     }, 200);
 
+    var last_level = level;
+    level = 0;
     playerClicks = 0;
     gamePattern = [];
     userClickedPattern = [];
     keyPressed = false;
     $("h1").text("Game Over, Press Any Key to Restart");
 
-    alert("Level reached: " + level);
-    level = 0;
+    setTimeout(function() {
+        alert("Level reached: " + last_level);
+    }, 200);
+
 }
 
 function timeout(ms) 
