@@ -26,7 +26,10 @@ $(".btn").click(function() {
     }
 });
 
-$("body").keypress(function()
+$("body").keypress(first_press_touch);
+$("body").touchstart(first_press_touch);
+
+function first_press_touch()
 {
     if(keyPressed == false)
     {
@@ -34,7 +37,7 @@ $("body").keypress(function()
         keyPressed = true;
         nextSequence();
     }
-});
+}
 
 function nextSequence()
 {
@@ -94,7 +97,7 @@ function gameOver()
     var audio = new Audio("sounds/wrong.mp3");
     audio.play();
     var last_level = level;
-    
+
     setTimeout(function() {
         bodyElement.removeClass("game-over");
         setTimeout(function() {
@@ -108,7 +111,6 @@ function gameOver()
     userClickedPattern = [];
     keyPressed = false;
     $("h1").text("Game Over, Press Any Key to Restart");
-
 }
 
 function timeout(ms) 

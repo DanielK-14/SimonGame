@@ -14,18 +14,18 @@ body
 
 .container 
 {
-    display: block;
-    width: 50%;
+    display: inline-block;
+    width: 80%;
     margin: auto;
 }
 
 .btn
 {
-    margin: 25px;
+    margin: 2em;
     display: inline-block;
-    height: 200px;
-    width: 200px;
-    border: 10px solid black;
+    height: 15em;
+    width: 15em;
+    border: 0.5em solid black;
     border-radius: 20%;
 }
 
