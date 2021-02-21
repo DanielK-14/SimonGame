@@ -9,9 +9,9 @@ var printIndex = 0;
 
 $(".btn").click(function() {
     var userChosenColour = this.id;
-    userClickedPattern.push(userChosenColour);
-    animatePress(userChosenColour);
     playButtonSound(userChosenColour);
+    animatePress(userChosenColour);
+    userClickedPattern.push(userChosenColour);
     playerClicks++;
     if(playerClicks == level)
     {
@@ -26,8 +26,7 @@ $(".btn").click(function() {
     }
 });
 
-$("body").keypress(first_press_touch);
-$("body").touchstart(first_press_touch);
+$("body").bind('keypress tap', first_press_touch);
 
 function first_press_touch()
 {
@@ -59,8 +58,8 @@ function playTemplate()
     }
 
     colorID = gamePattern[printIndex];
-    $('#'+colorID).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
     playButtonSound(colorID);
+    $('#'+colorID).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
     printIndex++;
     setTimeout(playTemplate, 500);
 }
