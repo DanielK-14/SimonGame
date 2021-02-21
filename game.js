@@ -97,16 +97,14 @@ function gameOver()
         bodyElement.removeClass("game-over");
     }, 200);
 
-    setTimeout(function(level) {
-        alert("Level reached: " + level);
-    }, 300);
-
     playerClicks = 0;
-    level = 0;
     gamePattern = [];
     userClickedPattern = [];
     keyPressed = false;
     $("h1").text("Game Over, Press Any Key to Restart");
+
+    alert("Level reached: " + level);
+    level = 0;
 }
 
 function timeout(ms) 
