@@ -107,7 +107,7 @@ function gameOver()
 
     setTimeout(function() {
         alert("Level reached: " + last_level);
-    }, 200);
+    }, 1000);
 
 }
 
